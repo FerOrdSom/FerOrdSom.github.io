@@ -60,12 +60,14 @@ class Runner {
 let simulation_1 = new Simulation();
 // console.log("start sim time: ", simulation_1.getSimulationTimeMs());
 let runner = new Runner(simulation_1);
+
 runner.start();
+
 // console.log("start_time: ", runner.start_time, " start sim time: ", runner.start_simulation_time);
 
 
 
-// setTimeout(runner.loop(), 1000);
+
 
 
 
