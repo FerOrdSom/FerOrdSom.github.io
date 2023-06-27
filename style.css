@@ -1,0 +1,58 @@
+.logo, .lang-flag{
+    padding-left: 2px;
+    width: 40px;
+    height: 40px; 
+       
+}
+.logo-container{
+    
+    width: 45px;
+    background-color: rgb(60, 60, 60);
+    display: inline;
+    float: left;
+    border: 1px solid antiquewhite;
+}
+.lang{
+    margin-right: 5px;
+    display: inline;
+    float: right;
+}
+#navbar{
+    background-color: rgb(0, 0, 0);
+    padding: 5px;
+    padding-top: 10px;
+    height: 45px;
+    margin: 0;
+}
+.nav-pages{
+    width: max-content;
+    margin: auto;
+    padding-top: 10px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+body{
+    color: antiquewhite;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li{
+    display: inline;
+    width: 30px;
+    padding: 10px;
+    margin: 0 5px;
+}
+li:hover{
+    background-color: rgb(30, 30, 30);
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+}
