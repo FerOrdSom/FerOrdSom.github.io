@@ -42,16 +42,17 @@ class Runner {
         console.log("drift: " + drift);
         return drift;
     }
-    loop(){
+    loop = () => {
         console.log("in loop");
-               
-        this.simulation.step();
+        console.log(this);
+        
         const drift = this.getDrift();
-        let delay = null;
-        delay = 1000;        
-        let sleep_time = Math.max(0, delay - drift);
+        this.simulation.step();
+        const delay = 1000;        
+        const sleep_time = Math.max(0, delay - drift);
         console.log("sleep_time: ", sleep_time);
-        this.timer = setTimeout(() => {this.loop()}, sleep_time);
+
+        this.timer = setTimeout(this.loop, sleep_time);
                 
         
     }
