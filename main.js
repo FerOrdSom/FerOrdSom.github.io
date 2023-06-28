@@ -1,70 +1,20 @@
+window.addEventListener("load", ()=>{
+    var state = {language : "es"};
+    var langFlag = document.getElementById("flag");
+    var langSelector = document.getElementById("lang");
+    var clicksOnFlag = 0;
+    langSelector.addEventListener("click", ()=>{
+        clicksOnFlag++;
+        if(clicksOnFlag % 2 == 0){
+            langFlag.attributes.src.nodeValue = "images/es.png";
+        }
+        else{
+            langFlag.attributes.src.nodeValue = "images/uk.png";
+        }
+    })
+    console.log(state.language);
+})
 
-
-class Simulation {
-
-    constructor() {
-        this.simulation_step = 0;
-    }
-    step() {
-        this.simulation_step += 1;
-    }
-    getSimulationTimeMs() {
-        return this.simulation_step * 1000;
-    }
-}
-
-
-class Runner {
-
-    constructor(simulation) {
-        this.simulation = simulation;
-        this.start_time = null;
-        this.start_simulation_time = null;
-        this.timer = null;
-    }
-    start() {
-        this.start_time = new Date().getTime();
-        this.start_simulation_time = this.simulation.getSimulationTimeMs();
-        console.log("start sim time value after start(): ", this.simulation.getSimulationTimeMs());
-        this.loop();
-    }
-    stop() {
-        this.start_time = null;
-        this.start_sim_time = null;
-        this.timer = null;
-    }
-    getDrift() {
-        const elapsed_time = new Date().getTime() - this.start_time;
-        console.log("elapsed_time: " + elapsed_time);
-        const elapsed_simulation_time = this.simulation.getSimulationTimeMs() - this.start_simulation_time;
-        console.log("elapsed_sim_time: " + elapsed_simulation_time);
-        const drift = elapsed_time - elapsed_simulation_time;
-        console.log("drift: " + drift);
-        return drift;
-    }
-    loop = () => {
-        console.log("in loop");
-        console.log(this);
-        
-        const drift = this.getDrift();
-        this.simulation.step();
-        const delay = 1000;        
-        const sleep_time = Math.max(0, delay - drift);
-        console.log("sleep_time: ", sleep_time);
-
-        this.timer = setTimeout(this.loop, sleep_time);
-                
-        
-    }
-}
-
-let simulation_1 = new Simulation();
-// console.log("start sim time: ", simulation_1.getSimulationTimeMs());
-let runner = new Runner(simulation_1);
-
-runner.start();
-
-// console.log("start_time: ", runner.start_time, " start sim time: ", runner.start_simulation_time);
 
 
 
