@@ -17,8 +17,7 @@ window.addEventListener("load", () => {
             console.log(routes[destination]);
             contentElement.innerHTML = "";
             injectContent(page);
-        })
-        
+        });        
     }
         
     
