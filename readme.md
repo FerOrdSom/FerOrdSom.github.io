@@ -11,5 +11,3 @@ The idea is to create a static single page app, using Github pages at the moment
 ## Status: Work in progress...
 
 
-
-

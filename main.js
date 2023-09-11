@@ -3,12 +3,11 @@ const routes = {
     "projects-nav" : "./pages/projects.html",
     "blog-nav": "./pages/blog.html",
 }
-console.log(routes["projects-nav"]);
 window.addEventListener("load", () => {
     var page = "./pages/about-me.html"; //this is part of the state of the page
     injectContent(page); //when state changes this runs loads content
     var navButtons = document.getElementsByClassName("nav-buttons");
-    
+
     for (let i = 0; i < navButtons.length; i++){
         var contentElement = document.getElementById("content");
         navButtons[i].addEventListener("click", ()=>{
