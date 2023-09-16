@@ -46,7 +46,8 @@ function populateNavButtons(routes) {
 
 function initialize() {
     populateNavButtons(routes);
-    injectContent(routes["about-nav"]);
+    
+    injectContent(Object.values(routes)[0]);
 }
 
 export {injectContent, populateNavButtons, initialize };

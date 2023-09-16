@@ -2,7 +2,7 @@
 
 // {<"navigation button id"> : <"url to content page">}
 const routes = {
-    "about-nav" : "./pages/about-me.html",
+    "about-nav" : "./pages/about-me.html", //<-- this is home page
     "projects-nav" : "./pages/projects.html",
     "blog-nav": "./pages/blog.html",
 }
