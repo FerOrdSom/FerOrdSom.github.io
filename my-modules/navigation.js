@@ -8,12 +8,13 @@ function injectContent(page) {
     //with ()=>: this: [object Window]
     //with function (): this: [object XMLHttpRequest]
     xhttp.onreadystatechange = function () {
-        console.log(this.readyState);
-        if (this.readyState === 4) { // 4 = operation complete  
-            console.log(this.status);          
-            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-            if (this.status == 404) { elmnt.innerHTML = "Page not found. Error 404"; }
-        }
+        elmnt.innerHTML = "ESPINER!!!!"; // load whatever spinner I decide
+        setTimeout(() => { //to simulate loading time            
+            if (this.readyState === 4) { // 4 = operation complete
+                if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                if (this.status == 404) { elmnt.innerHTML = "Page not found. Error 404"; }
+            }    
+        }, 1000);        
     }
     xhttp.open("GET", page, true);
     xhttp.send();
